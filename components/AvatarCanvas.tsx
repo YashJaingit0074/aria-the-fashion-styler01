@@ -4,8 +4,9 @@ import { Canvas, useFrame, ThreeElements } from '@react-three/fiber';
 import { PerspectiveCamera, OrbitControls, Stars, Float } from '@react-three/drei';
 import * as THREE from 'three';
 
-// Correctly augment React's JSX namespace to include Three.js elements
 // without shadowing standard HTML elements. This fixes the "Property does not exist on type 'JSX.IntrinsicElements'" errors.
+// This ensures that Three.js elements like <group>, <mesh>, <boxGeometry>, etc., 
+// are correctly recognized by TypeScript in modern React environments.
 declare global {
   namespace React {
     namespace JSX {
